@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		
+		<title>fx-sidemenu-content</title>
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<!-- 1. Load platform support before any code that touches the DOM. -->
+		<link rel="stylesheet" href="fx-sidemenu-content.css">
+		
+		
+		<script src="fox-core/dist/foxui.js?v=123"></script>
+		<!-- 2. Load the component using an HTML Import -->
+		<link rel="import" href="fx-sidemenu-content.html?v=123">
+
+	</head>
+	<body>
+		<fx-sidemenus>
+			<fx-sidemenu-content id="123" sidemenuWidth="80%">
+				<div style="position: absolute;left:0;right:0;top:0;bottom:0;background: #4F7DC9;">
+					<p>
+						<a id="left" >toggleleft</a>
+					</p>
+					<p>
+						<a id="right">toggleright</a>
+					</p>
+				</div>
+			</fx-sidemenu-content>
+			<fx-sidemenu direction="left">
+				<div style="position: absolute;left:0;right:0;top:0;bottom:0;background: #BCBCBC;">
+
+					<a onclick="alert('ww')">www.baidu.com</a>
+				</div>
+			</fx-sidemenu>
+
+			<fx-sidemenu direction="right">
+				<div style="position: absolute;left:0;right:0;top:0;bottom:0;background: #BCBCBC;">
+					<a onclick="alert('ww')">www.google.com</a>
+				</div>
+			</fx-sidemenu>
+
+		</fx-sidemenus>
+		<script>
+			window.addEventListener('HTMLImportsLoaded', function(e) {
+				document.getElementById("left").addEventListener("click",function(){
+					document.getElementById("123").toggle("left");	
+				},false);
+				document.getElementById("right").addEventListener("click",function(){
+					document.getElementById("123").toggle("right");	
+				},false);
+			},false);		
+	
+		</script>
+	</body>
+</html>
