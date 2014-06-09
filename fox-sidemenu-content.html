@@ -1,6 +1,6 @@
-<foxui-element name="fx-sidemenu" attributes="direction">
+<fox-element name="fox-sidemenu" attributes="direction">
     <script>
-		fox('fx-sidemenu', {
+		fox('fox-sidemenu', {
 			lifecycle : {
 				created : function() {
 					this.direction = this.direction || "left";
@@ -9,11 +9,11 @@
 		});
     </script>
 
-</foxui-element>
+</fox-element>
 
-<foxui-element name="fx-sidemenu-content" attributes="sidemenuWidth">
+<fox-element name="fox-sidemenu-content" attributes="sidemenuWidth">
     <fox-template>
-        <div id="fx-sidemenu-content-wrap">
+        <div id="fox-sidemenu-content-wrap">
             <content></content>
         </div>
     </fox-template>
@@ -71,7 +71,7 @@
 
 		function buildMenus(width) {
 			var obj = {};
-			var sidemenus = this.parentElement.querySelectorAll("fx-sidemenu");
+			var sidemenus = this.parentElement.querySelectorAll("fox-sidemenu");
 			for (var i = 0; i < sidemenus.length; i++) {
 				sidemenus[i].style.width = width + "px";
 				var dir = sidemenus[i].direction;
@@ -90,7 +90,7 @@
 
 		var width;
 
-		fox('fx-sidemenu-content', {
+		fox('fox-sidemenu-content', {
 			lifecycle : {
 				created : function() {
 					this.direction = this.direction || "";
@@ -105,7 +105,7 @@
 					if (sidemenus.right) {
 						this.direction += "right|";
 					}
-					elWrap = this.$['fx-sidemenu-content-wrap'];
+					elWrap = this.$['fox-sidemenu-content-wrap'];
 					var self = this, dir = this.direction;
 					var x, y, time, startX, isMoving;
 					elWrap.addEventListener("click", function(e) {
@@ -207,4 +207,4 @@
 		});
     </script>
 
-</foxui-element>
+</fox-element>

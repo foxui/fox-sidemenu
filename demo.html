@@ -7,17 +7,17 @@
 		
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<!-- 1. Load platform support before any code that touches the DOM. -->
-		<link rel="stylesheet" href="fx-sidemenu-content.css">
+		<link rel="stylesheet" href="fox-sidemenu-content.css">
 		
 		
 		<script src="fox-core/dist/foxui.js?v=123"></script>
 		<!-- 2. Load the component using an HTML Import -->
-		<link rel="import" href="fx-sidemenu-content.html?v=123">
+		<link rel="import" href="fox-sidemenu-content.html?v=123">
 
 	</head>
 	<body>
-		<fx-sidemenus>
-			<fx-sidemenu-content id="123" sidemenuWidth="80%">
+		<fox-sidemenus>
+			<fox-sidemenu-content id="123" sidemenuWidth="80%">
 				<div style="position: absolute;left:0;right:0;top:0;bottom:0;background: #4F7DC9;">
 					<p>
 						<a id="left" >toggleleft</a>
@@ -26,21 +26,21 @@
 						<a id="right">toggleright</a>
 					</p>
 				</div>
-			</fx-sidemenu-content>
-			<fx-sidemenu direction="left">
+			</fox-sidemenu-content>
+			<fox-sidemenu direction="left">
 				<div style="position: absolute;left:0;right:0;top:0;bottom:0;background: #BCBCBC;">
 
 					<a onclick="alert('ww')">www.baidu.com</a>
 				</div>
-			</fx-sidemenu>
+			</fox-sidemenu>
 
-			<fx-sidemenu direction="right">
+			<fox-sidemenu direction="right">
 				<div style="position: absolute;left:0;right:0;top:0;bottom:0;background: #BCBCBC;">
 					<a onclick="alert('ww')">www.google.com</a>
 				</div>
-			</fx-sidemenu>
+			</fox-sidemenu>
 
-		</fx-sidemenus>
+		</fox-sidemenus>
 		<script>
 			window.addEventListener('HTMLImportsLoaded', function(e) {
 				document.getElementById("left").addEventListener("click",function(){
