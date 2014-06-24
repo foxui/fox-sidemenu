@@ -1,5 +1,32 @@
+<style>
+	.fox-sidemenu-content-wrap, fox-sidemenu-content, fox-sidemenus {
+		position: absolute;
+		left: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+	}
+	fox-sidemenu {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		background: #fff;
+	}
+
+	fox-sidemenus {
+		overflow: hidden;
+	}
+	fox-sidemenu {
+		z-index: 0;
+	}
+	.fox-sidemenu-content-wrap {
+		overflow: hidden;
+		z-index: 2;
+	}
+
+</style>
 <fox-element name="fox-sidemenu" attributes="direction">
-    <script>
+	<script>
 		fox('fox-sidemenu', {
 			lifecycle : {
 				created : function() {
@@ -7,17 +34,17 @@
 				}
 			}
 		});
-    </script>
+	</script>
 
 </fox-element>
 
 <fox-element name="fox-sidemenu-content" attributes="sidemenuWidth">
-    <fox-template>
-        <div id="fox-sidemenu-content-wrap">
-            <content></content>
-        </div>
-    </fox-template>
-    <script>
+	<fox-template>
+		<div id="fox-sidemenu-content-wrap" class="fox-sidemenu-content-wrap">
+			<content></content>
+		</div>
+	</fox-template>
+	<script>
 		var elWrap, translateX = 0;
 
 		function getSidemenuWidth() {
@@ -93,11 +120,13 @@
 		fox('fox-sidemenu-content', {
 			lifecycle : {
 				created : function() {
+
 					this.direction = this.direction || "";
 					this.sidemenuWidth = this.sidemenuWidth || "80%";
 				},
 				inserted : function() {
 					width = getSidemenuWidth.call(this);
+
 					sidemenus = buildMenus.call(this, width);
 					if (sidemenus.left) {
 						this.direction += "left|";
@@ -164,9 +193,9 @@
 							}
 						} else {
 							if (dir.indexOf("left") != -1 && absDelta > 0) {
-							    
+
 								if (absDelta > width / 2) {
-								    console.info(width);
+									console.info(width);
 									translate(width, 200);
 								} else {
 									translate(0, 200);
@@ -205,6 +234,6 @@
 				}
 			}
 		});
-    </script>
+	</script>
 
 </fox-element>

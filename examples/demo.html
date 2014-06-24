@@ -8,17 +8,16 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<!-- 1. Load platform support before any code that touches the DOM. -->
 		<link rel="stylesheet" href="../../fox-core/dist/foxui.css"/>
-		<link rel="stylesheet" href="../dist/fox-sidemenu-content.css">
-		
 		
 		<script src="../../fox-core/dist/foxui.js"></script>
 		<!-- 2. Load the component using an HTML Import -->
+
 		<link rel="import" href="../dist/fox-sidemenu-content.html">
 
 	</head>
 	<body>
 		<fox-sidemenus>
-			<fox-sidemenu-content id="123" sidemenuWidth="80%">
+			<fox-sidemenu-content id="ddd" sidemenuWidth="80%">
 				<div style="position: absolute;left:0;right:0;top:0;bottom:0;background: #4F7DC9;">
 					<p>
 						<a id="left" >toggleleft</a>
@@ -45,10 +44,10 @@
 		<script>
 			window.addEventListener('HTMLImportsLoaded', function(e) {
 				document.getElementById("left").addEventListener("click",function(){
-					document.getElementById("123").toggle("left");	
+					document.getElementById("ddd").toggle("left");	
 				},false);
 				document.getElementById("right").addEventListener("click",function(){
-					document.getElementById("123").toggle("right");	
+					document.getElementById("ddd").toggle("right");	
 				},false);
 			},false);		
 	
