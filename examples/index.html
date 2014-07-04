@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+
+        <title>fox-sidemenu</title>
+
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <!-- 1. Load platform support before any code that touches the DOM. -->
+        <link rel="stylesheet" href="../../fox-core/dist/foxui.css"/>
+
+        <script src="../../fox-core/dist/foxui.js"></script>
+        <!-- 2. Load the component using an HTML Import -->
+
+        <link rel="import" href="../src/fox-sidemenu.html">
+        <link rel="import" href="../../fox-page/dist/fox-page.html">
+        <link rel="import" href="../../fox-page-content/dist/fox-page-content.html">
+        <link rel="import" href="../../fox-toolbar/dist/fox-toolbar.html">
+        <link rel="import" href="../../fox-icon/dist/fox-icon.html">
+        <style>
+            body{
+                background-color: #fff;
+            }
+        </style>
+    </head>
+    <body>
+        <fox-sidemenu sidemenuWidth="75%">
+
+            <fox-sidemenu-content>
+                <fox-page>
+                    <fox-toolbar title="fox-sidemenu">
+                        <fox-icon icon="icon-bars" class="left" onclick="document.querySelector('fox-sidemenu').toggle('left');"></fox-icon>
+                        <fox-icon icon="icon-gear" class="right" onclick="document.querySelector('fox-sidemenu').toggle('right');"></fox-icon>
+                    </fox-toolbar>
+                    <fox-page-content>
+
+                    </fox-page-content>
+                </fox-page>
+            </fox-sidemenu-content>
+
+            <fox-sidemenu-menu direction="left">
+                <div style="position: absolute;left:0;right:0;top:0;bottom:0;background: #f9f9f9;">
+
+                    <a onclick="alert('ww')">www.baidu.com</a>
+                </div>
+            </fox-sidemenu-menu>
+
+            <fox-sidemenu-menu direction="right">
+                <div style="position: absolute;left:0;right:0;top:0;bottom:0;background: #f9f9f9;">
+                    <a onclick="alert('ww')">www.google.com</a>
+                </div>
+            </fox-sidemenu-menu>
+
+        </fox-sidemenu>
+    </body>
+</html>
