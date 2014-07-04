@@ -169,7 +169,7 @@
 					var x, y, time, startX, isMoving;
 					elWrap.addEventListener('click', function(e) {
 						if (translateX != 0) {
-							console.info('stop');
+							// console.info('stop');
 							translate(0, 200);
 							e.stopPropagation();
 						}
@@ -225,7 +225,7 @@
 							if (dir.indexOf('left') != -1 && absDelta > 0) {
 
 								if (absDelta > width / 2) {
-									console.info(width);
+									// console.info(width);
 									translate(width, 200);
 								} else {
 									translate(0, 200);
